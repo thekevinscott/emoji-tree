@@ -14,3 +14,10 @@ emojiTree('Poo: 💩');
 ```
 
 Supports flags, skin colors, and other tricky emoji bits.
+
+## Installing
+
+```
+npm install emoji-tree
+```
+
