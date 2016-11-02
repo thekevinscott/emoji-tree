@@ -1,0 +1,61 @@
+{
+  "rules": {
+    "prefer-arrow-callback": 0,
+    "object-shorthand": 0,
+    "space-before-function-paren": 0,
+    "object-curly-spacing": 0,
+    "array-bracket-spacing": 0,
+    "spaced-comment": 0,
+    "comma-dangle": 0,
+    "no-else-return": 0,
+    "radix": 0,
+    "array-callback-return": 0,
+    "func-names": 0,
+    "strict": [0, "global"],
+    "global-strict": 0,
+    "indent": [1, 2],
+    "new-cap": 0,
+    "no-console": 0,
+    "no-var": 2,
+    "no-dupe-args": 1,
+    "no-dupe-keys": 1,
+    "no-duplicate-case": 1,
+    "no-undef": 1,
+    "no-unused-vars": 1,
+    "prefer-const": 1,
+    "no-trailing-spaces": 1,
+    "space-before-blocks": [2, "always"],
+    "no-const-assign": 2,
+    "arrow-spacing": 2,
+    "prefer-spread": 2,
+    "semi": [2, "always"],
+    "no-redeclare": 1,
+    "prefer-template": 0,
+    "space-infix-ops": 0,
+    "padded-blocks": 0,
+    "comma-spacing": 0,
+    "space-in-parens": 0,
+    "camelcase": 0,
+    "quotes": 0
+  },
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "globals": {
+    "describe": 1,
+    "it": 1,
+    "before": 1,
+    "after": 1,
+    "beforeEach": 1,
+    "afterEach": 1
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  }
+}
+
+
