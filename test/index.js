@@ -15,6 +15,46 @@ describe('Parsing emoji', function() {
 
   });
 
+  it('should parse text', function() {
+    const text = 'abc';
+    emojiTree(text).should.deep.equal([
+      {
+        text: 'a',
+        type: 'text',
+      },
+      {
+        text: 'b',
+        type: 'text',
+      },
+      {
+        text: 'c',
+        type: 'text',
+      },
+    ]);
+  });
+
+  it('should parse text', function() {
+    const text = 'abc💩';
+    emojiTree(text).should.deep.equal([
+      {
+        text: 'a',
+        type: 'text',
+      },
+      {
+        text: 'b',
+        type: 'text',
+      },
+      {
+        text: 'c',
+        type: 'text',
+      },
+      {
+        text: '💩',
+        type: 'emoji',
+      },
+    ]);
+  });
+
   it('should match two poos', function() {
     const text = '💩💩';
     emojiTree(text).should.deep.equal([
@@ -69,7 +109,8 @@ describe('Parsing emoji', function() {
 
       });
     });
-    describe.only('All Emojis', function() {
+
+    describe('All Emojis', function() {
       const allEmoji = EmojiData.all().concat(EmojiData.all_with_variants());
       allEmoji.map(function(emoji) {
         const unified = EmojiData.unified_to_char(emoji.unified);
