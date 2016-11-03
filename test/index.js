@@ -4,7 +4,7 @@ const EmojiData = require('emoji-data');
 const emojiTree = require('../index');
 
 describe('Parsing emoji', function() {
-  it.only('should match a poo', function() {
+  it('should match a poo', function() {
     const text = '💩';
     emojiTree(text).should.deep.equal([
       {
@@ -137,6 +137,29 @@ describe('Parsing emoji', function() {
       '👍🏾',
       '👍🏿',
     ].map(function(emoji) {
+      it('should get 1 emoji for ' + emoji, function() {
+        emojiTree(emoji).should.deep.equal([
+          {
+            text: emoji,
+            type: 'emoji',
+          },
+        ]);
+      });
+    });
+  });
+
+  describe('Unicode 9', function() {
+    const unicode9Emojis = [
+      '🤣',
+      '🤤',
+      '🤦',
+      '🦍',
+      '👩‍🎨',
+      '👩‍🚒',
+      '👨‍⚖️',
+    ];
+
+    unicode9Emojis.map(function(emoji) {
       it('should get 1 emoji for ' + emoji, function() {
         emojiTree(emoji).should.deep.equal([
           {
